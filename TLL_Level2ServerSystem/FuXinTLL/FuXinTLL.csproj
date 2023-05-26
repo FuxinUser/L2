@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DEEBF4C-8D80-4FBB-A85D-9EA1E5EC260A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FuXinTLL</RootNamespace>
+    <AssemblyName>FuXinTLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Table\API\L25API.cs" />
+    <Compile Include="Telegram\API\HMIAPI.cs" />
+    <Compile Include="Telegram\API\L1API.cs" />
+    <Compile Include="Telegram\API\MMSAPI.cs" />
+    <Compile Include="Telegram\API\MsgExtension.cs" />
+    <Compile Include="Telegram\API\WMSAPI.cs" />
+    <Compile Include="Telegram\BCScn\L2ToBCScn_Structure.cs" />
+    <Compile Include="Telegram\BCScn\BCScnToL2_Structure.cs" />
+    <Compile Include="Telegram\HMI\HMI_Structure.cs" />
+    <Compile Include="Telegram\HMI\HMI_ServerToClient_Structure.cs" />
+    <Compile Include="Telegram\L1\L1ToL2_Structure.cs" />
+    <Compile Include="Telegram\L1\L2ToL1_Structure.cs" />
+    <Compile Include="Telegram\L1\TLL_L1.cs" />
+    <Compile Include="Telegram\MsgConst.cs" />
+    <Compile Include="Telegram\MsgDefine.cs" />
+    <Compile Include="Telegram\API\MsgFactory.cs" />
+    <Compile Include="Telegram\HMI\HMI_ClientToServer_Structure.cs" />
+    <Compile Include="Telegram\MMS\MMS_Defect_Structure.cs" />
+    <Compile Include="Telegram\MMS\MMS_ACK_Structure.cs" />
+    <Compile Include="Telegram\MMS\MMS_Header_Structure.cs" />
+    <Compile Include="Telegram\MMS\MMS_Heartbeat_Structure.cs" />
+    <Compile Include="Telegram\MMS\MmsToL2_Structure.cs" />
+    <Compile Include="Telegram\MMS\L2ToMms_Structure.cs" />
+    <Compile Include="Telegram\Other\ExitLabel.cs" />
+    <Compile Include="Telegram\Other\PresetStart.cs" />
+    <Compile Include="Telegram\Other\RetWms.cs" />
+    <Compile Include="Telegram\Other\SampleLabel.cs" />
+    <Compile Include="Telegram\WMS\WMS_ACK_Structure.cs" />
+    <Compile Include="Telegram\WMS\WMS_Header_Structure.cs" />
+    <Compile Include="Telegram\WMS\WmsToL2_Structure.cs" />
+    <Compile Include="Telegram\WMS\L2ToWms_Structure.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Table\API\CoilAPI.cs" />
+    <Compile Include="Table\API\CommRecAPI.cs" />
+    <Compile Include="Table\API\DBService.cs" />
+    <Compile Include="Table\API\DtGtrAPI.cs" />
+    <Compile Include="Table\API\SysAPI.cs" />
+    <Compile Include="Table\API\TrkAPI.cs" />
+    <Compile Include="Table\TblConst.cs" />
+    <Compile Include="Table\TblFactory.cs" />
+    <Compile Include="Table\Tbls.cs" />
+    <Compile Include="Formatter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{ab2396cc-c978-42d7-bf47-d82a5fb6c78e}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
